@@ -1,15 +1,19 @@
 :root {
-  --ink: #202124;
-  --muted: #63666a;
-  --line: #d9dde3;
-  --paper: #fafafa;
+  --ink: #17202f;
+  --muted: #667085;
+  --line: #d7deea;
+  --paper: #f5f7fb;
   --panel: #ffffff;
-  --blue: #2454a6;
-  --green: #2f7d57;
-  --amber: #a76518;
+  --blue: #2357b7;
+  --blue-dark: #17315f;
+  --green: #267a55;
+  --amber: #a45d11;
   --red: #a63d40;
-  --violet: #6554a6;
-  --steel: #eff3f7;
+  --violet: #6750a4;
+  --cyan: #0d6f86;
+  --steel: #edf2f7;
+  --shadow: 0 18px 45px rgba(22, 32, 48, .10);
+  --soft-shadow: 0 10px 24px rgba(22, 32, 48, .07);
 }
 
 * {
@@ -18,7 +22,9 @@
 
 body {
   margin: 0;
-  background: var(--paper);
+  background:
+    linear-gradient(180deg, rgba(35, 87, 183, .08), rgba(35, 87, 183, 0) 340px),
+    var(--paper);
   color: var(--ink);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.5;
@@ -32,14 +38,16 @@ a {
 
 .shell {
   display: grid;
-  grid-template-columns: 280px minmax(0, 1fr);
+  grid-template-columns: 300px minmax(0, 1fr);
   min-height: 100vh;
 }
 
 .sidebar {
-  background: #111827;
+  background:
+    linear-gradient(180deg, #101827 0%, #172033 58%, #111827 100%);
   color: #f7f8fb;
-  padding: 28px 22px;
+  padding: 30px 24px;
+  border-right: 1px solid rgba(255,255,255,.08);
 }
 
 .sidebar h1,
@@ -48,7 +56,7 @@ a {
 }
 
 .sidebar h1 {
-  font-size: 22px;
+  font-size: 24px;
   line-height: 1.15;
 }
 
@@ -71,19 +79,22 @@ a {
 .nav-group a {
   display: block;
   color: #eef2f7;
-  padding: 7px 0;
+  padding: 8px 10px;
+  margin: 2px -10px;
+  border-radius: 7px;
   text-decoration: none;
   font-size: 14px;
 }
 
 .nav-group a:hover {
   color: #ffffff;
-  text-decoration: underline;
+  background: rgba(255,255,255,.08);
+  text-decoration: none;
 }
 
 .content {
-  padding: 34px;
-  max-width: 1220px;
+  padding: 40px;
+  max-width: 1280px;
   width: 100%;
 }
 
@@ -97,8 +108,9 @@ a {
 
 .page-title {
   margin: 4px 0 10px;
-  font-size: 34px;
+  font-size: 40px;
   line-height: 1.1;
+  letter-spacing: 0;
 }
 
 .lede {
@@ -110,7 +122,7 @@ a {
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 14px;
+  gap: 16px;
   margin-top: 22px;
 }
 
@@ -119,7 +131,19 @@ a {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 8px;
-  padding: 18px;
+  padding: 20px;
+  box-shadow: var(--soft-shadow);
+}
+
+.card {
+  display: block;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.card:hover {
+  border-color: #b8c6dc;
+  transform: translateY(-1px);
 }
 
 .card h2,
@@ -144,6 +168,13 @@ a {
   color: var(--ink);
   font-size: 12px;
   font-weight: 700;
+}
+
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
 }
 
 .codename {
@@ -172,7 +203,7 @@ a {
 }
 
 .section {
-  margin-top: 30px;
+  margin-top: 34px;
 }
 
 .section h2 {
@@ -193,6 +224,7 @@ a {
   background: #f2f6ff;
   padding: 14px 16px;
   margin: 18px 0;
+  border-radius: 0 8px 8px 0;
 }
 
 .table-wrap {
@@ -201,6 +233,7 @@ a {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel);
+  box-shadow: var(--soft-shadow);
 }
 
 table {
@@ -250,6 +283,165 @@ tr:last-child td {
   font-size: 13px;
 }
 
+.hero {
+  background:
+    radial-gradient(circle at top right, rgba(13, 111, 134, .18), transparent 34%),
+    linear-gradient(135deg, #ffffff 0%, #f8fbff 58%, #eef5ff 100%);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 30px;
+  box-shadow: var(--shadow);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(300px, .75fr);
+  gap: 22px;
+  align-items: stretch;
+}
+
+.mode-card {
+  border: 1px solid #c6d3e6;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.mode-card.primary {
+  border-color: rgba(35, 87, 183, .34);
+  background: linear-gradient(180deg, #ffffff, #f2f7ff);
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.metric {
+  background: rgba(255,255,255,.82);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.metric strong {
+  display: block;
+  font-size: 26px;
+  line-height: 1;
+}
+
+.metric span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.workflow-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.step-card {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px;
+  background: #fff;
+}
+
+.step-card strong {
+  display: block;
+  font-size: 17px;
+  margin-bottom: 5px;
+}
+
+.step-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.timeline {
+  counter-reset: step;
+  display: grid;
+  gap: 12px;
+}
+
+.timeline-item {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px 16px 16px 52px;
+  box-shadow: var(--soft-shadow);
+}
+
+.timeline-item::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--blue);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.compact-list {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.compact-list li {
+  margin: 5px 0;
+}
+
+.page-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.button-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 8px 13px;
+  border: 1px solid var(--blue);
+  border-radius: 8px;
+  background: var(--blue);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.button-link.secondary {
+  background: #ffffff;
+  color: var(--blue);
+}
+
+.prompt-box {
+  background: #0f172a;
+  color: #e5edf8;
+  border-radius: 10px;
+  padding: 18px;
+  overflow-x: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 13px;
+}
+
 @media (max-width: 820px) {
   .shell {
     grid-template-columns: 1fr;
@@ -264,10 +456,16 @@ tr:last-child td {
   }
 
   .page-title {
-    font-size: 28px;
+    font-size: 30px;
   }
 
   .two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-grid,
+  .metric-grid,
+  .workflow-strip {
     grid-template-columns: 1fr;
   }
 }

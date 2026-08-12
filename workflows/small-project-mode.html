@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Small Project Mode</title>
+  <link rel="stylesheet" href="../assets/company.css">
+</head>
+<body>
+  <main class="content">
+    <p><a href="../index.html">Back to dashboard</a></p>
+    <div class="eyebrow">Default workflow mode</div>
+    <h1 class="page-title">Small Project Mode</h1>
+    <p class="lede">Use this for normal small projects, bug fixes, narrow features, cleanup tasks, and focused implementation work.</p>
+
+    <section class="hero">
+      <div class="badge-row">
+        <span class="badge status-done">Default if no mode is mentioned</span>
+        <span class="badge codename">Orion + Specialist + Scout</span>
+      </div>
+      <h2>Lean team, lower token cost, enough control.</h2>
+      <p>Small Project Mode uses only the roles needed for most software tasks: Lead, Developer, and QA. Extra agents are invited only when their domain materially affects the outcome.</p>
+    </section>
+
+    <section class="section">
+      <h2>Default Team</h2>
+      <div class="workflow-strip">
+        <div class="step-card">
+          <strong>Lead: Orion</strong>
+          <p>Clarifies scope, chooses the developer specialty, checks risk, and reviews the result.</p>
+        </div>
+        <div class="step-card">
+          <strong>Developer: Specialist</strong>
+          <p>Implements the change. Use Pixel, Forge, Swift, Harbor, Schema, Circuit, or Sentinel as needed.</p>
+        </div>
+        <div class="step-card">
+          <strong>QA: Scout</strong>
+          <p>Verifies acceptance criteria, checks regressions, updates QA and activity logs.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section two-col">
+      <div class="panel">
+        <h2>Mode Rule</h2>
+        <ul class="checklist">
+          <li>If no mode is mentioned, use Small Project Mode.</li>
+          <li>If the task appears larger than a focused change, ask which mode to use before starting.</li>
+          <li>If the user says "small", "quick", "simple", or "just fix", stay in Small Project Mode unless risk requires escalation.</li>
+          <li>If the user says "release", "sprint", "production", "launch", or "full workflow", ask whether to use Full Company Mode.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h2>Escalate Only When Needed</h2>
+        <ul class="checklist">
+          <li>Product Owner for unclear user value or acceptance criteria.</li>
+          <li>Security for auth, data, secrets, permissions, payments, or abuse risk.</li>
+          <li>DevOps for CI/CD, deployments, infrastructure, or monitoring.</li>
+          <li>Database for schema, migration, data cleanup, or analytics.</li>
+          <li>Release Manager for public releases, rollback, and release notes.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Small Project Flow</h2>
+      <div class="timeline">
+        <div class="timeline-item"><strong>Lead intake</strong><p>Define goal, scope, developer specialty, risks, and verification target.</p></div>
+        <div class="timeline-item"><strong>Developer implementation</strong><p>Make the focused change, preserve existing patterns, and log what changed.</p></div>
+        <div class="timeline-item"><strong>Lead review</strong><p>Check correctness, maintainability, and whether extra specialist review is required.</p></div>
+        <div class="timeline-item"><strong>QA verification</strong><p>Run the relevant checks, record evidence, and mark pass, fail, blocked, or not tested.</p></div>
+        <div class="timeline-item"><strong>Closeout</strong><p>Update activity, decision, risk, and QA logs, then summarize status and next steps.</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Lead Opening Prompt</h2>
+      <pre class="prompt-box">You are Orion, the Lead Agent. If no workflow mode is specified, use Small Project Mode.
+
+First, decide whether the task can be handled by Lead + one Specialist Developer + QA.
+If it looks cross-system, release-sensitive, security-sensitive, or unclear, ask:
+"Should I run this in Small Project Mode or Full Company Mode?"
+
+Then define the goal, choose the specialist developer, require logging, and keep the workflow lean.</pre>
+    </section>
+  </main>
+</body>
+</html>

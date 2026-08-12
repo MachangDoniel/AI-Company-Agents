@@ -4,6 +4,16 @@
 
 This operating system turns a software request into a controlled company-style workflow. It is designed for focused agents with clear responsibilities, handoffs, and approval gates.
 
+## Default Mode
+
+If no workflow mode is mentioned, use Small Project Mode:
+
+- Lead: Tech Lead / Orion
+- Developer: the relevant specialist
+- QA: QA Engineer / Scout
+
+The Lead asks which mode to use before starting when the work appears broad, release-sensitive, security-sensitive, cross-system, or unclear.
+
 ## Principles
 
 - One owner per phase.
@@ -13,7 +23,31 @@ This operating system turns a software request into a controlled company-style w
 - Security participates early for auth, data, payment, secrets, permissions, network, AI, and infrastructure changes.
 - Release readiness is a separate decision from implementation completion.
 
-## Standard Delivery Lifecycle
+## Small Project Mode
+
+Use this for focused day-to-day work:
+
+1. **Lead Intake**
+   - Owner: Tech Lead
+   - Output: goal, scope, chosen developer specialty, verification target
+
+2. **Implementation**
+   - Owner: Relevant Specialist Developer
+   - Output: working change, tests or verification notes
+
+3. **Review**
+   - Owner: Tech Lead
+   - Output: correctness and maintainability check
+
+4. **QA Verification**
+   - Owner: QA Engineer
+   - Output: pass, fail, blocked, or not-tested result
+
+5. **Closeout**
+   - Owner: Tech Lead
+   - Output: log updates and final summary
+
+## Full Company Delivery Lifecycle
 
 1. **Intake**
    - Owner: Manager

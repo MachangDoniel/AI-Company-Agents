@@ -1,15 +1,38 @@
 # AI Company Agents
 
-This folder is a reusable software-company workflow for running focused AI agents as if they were a small product engineering organization.
+This folder is a reusable software-company workflow for running focused AI agents as if they were a small product engineering organization. It includes a static HTML dashboard, agent role profiles, workflow modes, sprint logs, release pages, and reusable templates.
 
 ## How To Use
 
-1. Start with `company-operating-system.md`.
+1. Open `index.html` in a browser.
 2. Pick the workflow that matches the task from `workflows/`.
 3. Assign roles from `agents/`.
 4. Use templates from `templates/` for briefs, plans, QA, reviews, releases, and handoffs.
 
+## Default Mode
+
+If no workflow mode is mentioned, use Small Project Mode:
+
+```text
+Tech Lead: Orion
+Developer: relevant specialist
+QA: Scout
+```
+
+If a task looks broad, release-sensitive, security-sensitive, or cross-system, Orion should ask which mode to use before starting.
+
 ## Core Company Flow
+
+Small Project Mode:
+
+```text
+Tech Lead clarifies and plans
+-> Specialist Developer implements
+-> QA Engineer verifies
+-> Tech Lead closes out logs and summary
+```
+
+Full Company Mode:
 
 ```text
 Manager / Product Owner clarifies the goal

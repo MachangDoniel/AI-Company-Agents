@@ -10,13 +10,18 @@
   <div class="shell">
     <aside class="sidebar">
       <h1>AI Company Agents</h1>
-      <p>Static operating dashboard for focused software-company agents, sprint logs, releases, and reports.</p>
+      <p>Professional static dashboard for focused AI software teams, sprint logs, releases, and reports.</p>
       <nav>
         <div class="nav-group">
           <h2>Company</h2>
           <a href="index.html">Dashboard</a>
           <a href="agents/agent-roster.html">Agent roster</a>
           <a href="company-operating-system.html">Operating system</a>
+        </div>
+        <div class="nav-group">
+          <h2>Modes</h2>
+          <a href="workflows/small-project-mode.html">Small Project Mode</a>
+          <a href="workflows/feature-delivery.html">Full Company Mode</a>
         </div>
         <div class="nav-group">
           <h2>Logs</h2>
@@ -41,55 +46,88 @@
           <a href="templates/code-review-report.html">Code review report</a>
           <a href="templates/release-checklist.html">Release checklist</a>
         </div>
-        <div class="nav-group">
-          <h2>Docs</h2>
-          <a href="docs/html-dashboard-design.html">HTML dashboard design</a>
-          <a href="docs/html-dashboard-implementation-plan.html">Implementation plan</a>
-        </div>
       </nav>
     </aside>
     <main class="content">
-      <div class="eyebrow">Company dashboard</div>
-      <h1 class="page-title">Run software work like a small AI company.</h1>
-      <p class="lede">Use the role pages to assign focused agents, the workflow pages to move tasks through delivery, and the log pages to capture enough history for sprint reports and release summaries.</p>
-
-      <section class="grid">
-        <article class="card">
-          <span class="badge codename">Start here</span>
-          <h2>Agent Roster</h2>
-          <p>Choose a role, optionally use its codename, and paste the agent prompt into your AI session.</p>
-          <a href="agents/agent-roster.html">Open roster</a>
-        </article>
-        <article class="card">
-          <span class="badge status-review">Live record</span>
-          <h2>Activity Log</h2>
-          <p>Record every meaningful task, owner, status, verification result, and handoff.</p>
-          <a href="logs/activity-log.html">Open activity log</a>
-        </article>
-        <article class="card">
-          <span class="badge status-risk">Sprint closeout</span>
-          <h2>Sprint Report</h2>
-          <p>Summarize completed work, shipped features, risks, QA, release status, and follow-ups.</p>
-          <a href="sprints/sprint-report-template.html">Open sprint report</a>
-        </article>
-        <article class="card">
-          <span class="badge status-done">Release</span>
-          <h2>Release Page</h2>
-          <p>Prepare a clean release summary page with highlights, fixes, validation, and known issues.</p>
-          <a href="sprints/release-page-template.html">Open release page</a>
-        </article>
+      <section class="hero">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">Operations dashboard</div>
+            <h1 class="page-title">Run software work with the right-size AI team.</h1>
+            <p class="lede">Small Project Mode is the default. Use Lead, Developer, and QA for normal tasks, then invite specialists only when the work actually needs them.</p>
+            <div class="page-actions">
+              <a class="button-link" href="workflows/small-project-mode.html">Start Small Project Mode</a>
+              <a class="button-link secondary" href="agents/agent-roster.html">View agent roster</a>
+            </div>
+          </div>
+          <div class="mode-card primary">
+            <div class="badge-row">
+              <span class="badge status-done">Default mode</span>
+              <span class="badge codename">Orion + Specialist + Scout</span>
+            </div>
+            <h2>Small Project Mode</h2>
+            <p>When no mode is mentioned, start here. The Lead asks which mode to use if the task looks larger than a small change.</p>
+            <div class="workflow-strip">
+              <div class="step-card"><strong>Lead</strong><p>Plan and review.</p></div>
+              <div class="step-card"><strong>Developer</strong><p>Implement.</p></div>
+              <div class="step-card"><strong>QA</strong><p>Verify and report.</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="metric-grid">
+          <div class="metric"><strong>3</strong><span>Default roles</span></div>
+          <div class="metric"><strong>12</strong><span>Available agents</span></div>
+          <div class="metric"><strong>5</strong><span>Live logs</span></div>
+          <div class="metric"><strong>1</strong><span>Release page</span></div>
+        </div>
       </section>
 
       <section class="section">
-        <h2>Logging Rule</h2>
+        <h2>Mode Selection Rule</h2>
         <div class="callout">
-          Every agent logs what changed, what was decided, what was verified, and what remains open before handing off to the next role.
+          If the user does not mention a mode, run Small Project Mode. If the work appears broad, release-sensitive, security-sensitive, or cross-system, ask which mode to use before starting.
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Command Center</h2>
+        <div class="grid">
+          <a class="card" href="workflows/small-project-mode.html"><span class="badge status-done">Default</span><h2>Small Project Mode</h2><p>Lead, Developer, and QA for focused day-to-day work.</p></a>
+          <a class="card" href="workflows/feature-delivery.html"><span class="badge status-review">Expanded</span><h2>Full Company Mode</h2><p>Manager, product, lead, specialists, QA, security, and release for larger work.</p></a>
+          <a class="card" href="logs/activity-log.html"><span class="badge codename">Live record</span><h2>Activity Log</h2><p>Track task ownership, status, verification, and handoffs.</p></a>
+          <a class="card" href="sprints/sprint-report-template.html"><span class="badge status-risk">Closeout</span><h2>Sprint Report</h2><p>Summarize features, fixes, decisions, risks, and agent contributions.</p></a>
+        </div>
+      </section>
+
+      <section class="section two-col">
+        <div class="panel">
+          <h2>When To Add Specialists</h2>
+          <ul class="compact-list">
+            <li>Security: auth, secrets, user data, permissions, payments.</li>
+            <li>DevOps: CI/CD, servers, deployments, observability.</li>
+            <li>Database: schema, migrations, analytics, data cleanup.</li>
+            <li>Product Owner: unclear user workflow or acceptance criteria.</li>
+            <li>Release Manager: production release, public changelog, rollback.</li>
+            <li>AI Automation: prompts, agents, tools, LLM workflows.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h2>Logging Rule</h2>
+          <p>Every active role logs what changed, what was decided, what was verified, and what remains open before handing off.</p>
+          <div class="page-actions">
+            <a class="button-link secondary" href="logs/activity-log.html">Activity</a>
+            <a class="button-link secondary" href="logs/decision-log.html">Decisions</a>
+            <a class="button-link secondary" href="logs/risk-log.html">Risks</a>
+            <a class="button-link secondary" href="logs/qa-log.html">QA</a>
+            <a class="button-link secondary" href="logs/release-log.html">Release</a>
+          </div>
         </div>
       </section>
 
       <section class="section">
         <h2>Workflow Index</h2>
         <div class="grid">
+          <a class="card" href="workflows/small-project-mode.html">Small Project Mode</a>
           <a class="card" href="workflows/feature-delivery.html">Feature delivery</a>
           <a class="card" href="workflows/bug-fix.html">Bug fix</a>
           <a class="card" href="workflows/code-review.html">Code review</a>
@@ -99,19 +137,7 @@
         </div>
       </section>
 
-      <section class="section">
-        <h2>Template Index</h2>
-        <div class="grid">
-          <a class="card" href="templates/task-brief.html">Task brief</a>
-          <a class="card" href="templates/implementation-plan.html">Implementation plan</a>
-          <a class="card" href="templates/handoff-note.html">Handoff note</a>
-          <a class="card" href="templates/qa-test-plan.html">QA test plan</a>
-          <a class="card" href="templates/code-review-report.html">Code review report</a>
-          <a class="card" href="templates/release-checklist.html">Release checklist</a>
-        </div>
-      </section>
-
-      <p class="footer-note">Edit these HTML files directly or ask an agent to update the relevant log after each task.</p>
+      <p class="footer-note">Open this file directly in a browser. No server, build step, or database is required.</p>
     </main>
   </div>
 </body>
