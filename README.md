@@ -2,6 +2,13 @@
 
 This folder is a reusable software-company workflow for running focused AI agents as if they were a small product engineering organization. It includes a static HTML dashboard, agent role profiles, workflow modes, sprint logs, release pages, and reusable templates.
 
+## Dashboard
+
+- Open `index.html` in a browser.
+- The left navigation panel is available on every HTML page.
+- Use the sidebar theme toggle to switch between light and dark mode.
+- The theme preference is saved in the browser.
+
 ## How To Use
 
 1. Open `index.html` in a browser.
