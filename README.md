@@ -2,9 +2,19 @@
 
 This folder is a reusable software-company workflow for running focused AI agents as if they were a small product engineering organization. It includes a static HTML dashboard, agent role profiles, workflow modes, sprint logs, release pages, and reusable templates.
 
+## Open Dashboard
+
+[Open the HTML dashboard](https://htmlpreview.github.io/?https://github.com/MachangDoniel/AI-Company-Agents/blob/main/index.html)
+
+GitHub Pages URL, after Pages is enabled for this repository:
+
+```text
+https://machangdoniel.github.io/AI-Company-Agents/
+```
+
 ## Dashboard
 
-- Open `index.html` in a browser.
+- Use the dashboard link above from the README, or open `index.html` locally.
 - The left navigation panel is available on every HTML page.
 - Use the sidebar theme toggle to switch between light and dark mode.
 - The theme preference is saved in the browser.
